@@ -37,11 +37,6 @@
 
         .bg-grid {
             background-size: 50px 50px;
-            background-image: linear-gradient(to right, #f1f1f1 1px, transparent 1px),
-                              linear-gradient(to bottom, #f1f1f1 1px, transparent 1px);
-        }
-
-        .dark .bg-grid {
             background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
                               linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
         }
@@ -83,23 +78,9 @@
             background-color: #000;
             color: #fff;
         }
-
-        /* Testimonial Animation */
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 40s linear infinite;
-        }
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
     </style>
 </head>
-<body class="bg-grid dark:bg-neutral-950 dark:text-gray-200">
+<body class="dark:bg-grid dark:bg-neutral-950 dark:text-gray-200">
 
     <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 dark:bg-neutral-950/90 dark:border-neutral-800">
         <nav class="flex justify-between items-center px-4 sm:px-6 md:px-16 py-4 sm:py-5">
@@ -109,9 +90,10 @@
             <ul class="hidden md:flex space-x-10 uppercase tracking-widest text-gray-400 dark:text-gray-500">
                 <li><a href="#home" class="nav-link hover:text-black dark:hover:text-white transition">Home</a></li>
                 <li><a href="#about" class="nav-link hover:text-black dark:hover:text-white transition">About</a></li>
-                <li><a href="#testimonials" class="nav-link hover:text-black dark:hover:text-white transition">Testimonials</a></li>
+                <li><a href="#experience" class="nav-link hover:text-black dark:hover:text-white transition">Experience</a></li>
                 <li><a href="#skills" class="nav-link hover:text-black dark:hover:text-white transition">Skills</a></li>
                 <li><a href="#certificates" class="nav-link hover:text-black dark:hover:text-white transition">Certs</a></li>
+                <li><a href="gallery.html" class="nav-link hover:text-black dark:hover:text-white transition">Gallery</a></li>
             </ul>
             <div class="flex items-center gap-3">
                 <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-black hover:bg-gray-100 dark:border-neutral-800 dark:text-white dark:hover:bg-neutral-800 transition" aria-label="Toggle theme">
@@ -133,10 +115,11 @@
             <div class="grid gap-2 text-[10px] uppercase tracking-widest text-gray-600 dark:text-gray-400">
                 <a href="#home" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">Home</a>
                 <a href="#about" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">About</a>
-                <a href="#testimonials" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">Testimonials</a>
+                <a href="#experience" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">Experience</a>
                 <a href="#projects" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">Projects</a>
                 <a href="#skills" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">Skills</a>
-                <a href="#certificates" class="py-2 hover:text-black dark:hover:text-white transition">Certs</a>
+                <a href="#certificates" class="py-2 border-b border-gray-100 dark:border-neutral-800 hover:text-black dark:hover:text-white transition">Certs</a>
+                <a href="gallery.html" class="py-2 hover:text-black dark:hover:text-white transition">Gallery</a>
             </div>
         </div>
     </header>
@@ -152,6 +135,7 @@
         <div class="mt-10 md:mt-12 flex flex-col sm:flex-row gap-4 w-full sm:w-auto" data-aos="fade-up" data-aos-delay="400">
             <a href="https://linkedin.com/in/Ardi-sandiaga" target="_blank" class="text-[10px] font-black border border-black dark:border-white px-6 py-3 rounded-full uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition w-full sm:w-auto text-center dark:text-white text-black">LinkedIn</a>
             <a href="https://instagram.com/sandiagaaa._" target="_blank" class="text-[10px] font-black border border-black dark:border-white px-6 py-3 rounded-full uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition w-full sm:w-auto text-center dark:text-white text-black">Instagram</a>
+            <a href="Aset/CV - Ardi Sandiaga Zuhdi.pdf" download class="text-[10px] font-black border border-black dark:border-white px-6 py-3 rounded-full uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition w-full sm:w-auto text-center dark:text-white text-black">Download CV</a>
         </div>
     </section>
 
@@ -189,96 +173,120 @@
         </div>
     </section>
 
-    <section id="testimonials" class="py-24 md:py-32 bg-black dark:bg-[#080808] overflow-hidden">
-        <h3 class="text-[10px] sm:text-[12px] uppercase tracking-[0.4em] text-gray-500 mb-10 sm:mb-16 font-extrabold text-center">Rekomendasi Profesional</h3>
-        <div class="relative flex">
-            <div class="animate-marquee flex gap-8 pr-8">
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 dark:bg-neutral-950 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Kemampuan logika routing Ardi sangat impresif; penyelesaian masalah pada perangkat Cisco dilakukan dengan metodologi yang sangat tepat."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Alvin Zaidan</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Network Specialist</span>
+    <section id="experience" class="py-24 md:py-32 px-4 sm:px-6 md:px-16 bg-white dark:bg-neutral-950">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-[10px] sm:text-[11px] uppercase tracking-[0.6em] text-gray-400 dark:text-gray-500 mb-12 md:mb-20 font-black text-center" data-aos="fade-up">Experience</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg uppercase tracking-tighter dark:text-white">SMK Nurul Hikmah</h4>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Networking Instructor</span>
+                        </div>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Teaching basic networking concepts, CCNA fundamentals, and hands-on router configuration to vocational students.</p>
+                    <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">2023-2024</span>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Bekerja bersama Ardi sangat efisien. Beliau memiliki pemahaman mendalam mengenai struktur topologi jaringan yang terorganisir."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">A. Ibnu Auf Alfarizi</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Systems Engineer</span>
+
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg uppercase tracking-tighter dark:text-white">SMK Fatahillah</h4>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Guest Teacher</span>
+                        </div>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Conducted network configuration workshops focusing on practical implementation of routing protocols and network security.</p>
+                    <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">2022</span>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Infrastruktur jaringan yang dibangun sangat rapi dan memenuhi standar efisiensi industri saat ini."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Aria Putra Bakti</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Network Administrator</span>
+
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg uppercase tracking-tighter dark:text-white">SMA 11 Bekasi</h4>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Networking Workshop</span>
+                        </div>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Introduction to enterprise networking, including network design principles and career opportunities in IT networking.</p>
+                    <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">2023</span>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Sangat kompeten dalam konfigurasi MikroTik, terutama pada implementasi protokol routing OSPF dan BGP."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Arkan Azka</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Infrastructure Lead</span>
+
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg uppercase tracking-tighter dark:text-white">SMP Nurul Hikmah</h4>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Basic IT Instructor</span>
+                        </div>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Teaching computer networks basics, internet fundamentals, and basic troubleshooting to junior high school students.</p>
+                    <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">2021-2022</span>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Penyampaian solusi teknis yang diberikan sangat jelas dan aplikatif. Ahli dalam manajemen jaringan enterprise."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Rehan Firmansyah</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">IT Consultant</span>
+
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg uppercase tracking-tighter dark:text-white">Various Vocational Schools</h4>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">Guest Lecturer</span>
+                        </div>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Advanced routing and switching topics, including OSPF, BGP, and network automation for vocational high school students.</p>
+                    <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">2024-2026</span>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Memiliki wawasan yang luas dalam diskusi mengenai keamanan jaringan dan optimasi bandwidth."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Zubair</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Security Analyst</span>
+
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="800">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg uppercase tracking-tighter dark:text-white">Student Testimonial</h4>
+                            <span class="text-[9px] text-gray-500 uppercase font-bold tracking-widest">From SMK Nurul Hikmah</span>
+                        </div>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 italic">"Ardi's teaching made complex networking concepts easy to understand. His practical approach really helped me grasp CCNA topics."</p>
+                    <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">- Student Name, 2024</span>
                 </div>
             </div>
 
-            <div class="animate-marquee flex gap-8 pr-8" aria-hidden="true">
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Kemampuan logika routing Ardi sangat impresif; penyelesaian masalah pada perangkat Cisco dilakukan dengan metodologi yang sangat tepat."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Alvin Zaidan</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Network Specialist</span>
-                    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100 dark:bg-neutral-800 border border-gray-100 dark:border-neutral-800 rounded-3xl overflow-hidden mt-16" data-aos="fade-up" data-aos-delay="900">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 text-center group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
+                    <p class="text-4xl font-black mb-2 group-hover:scale-110 group-hover:text-white dark:group-hover:text-black transition-transform dark:text-white">5+</p>
+                    <p class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400 dark:text-gray-500 group-hover:text-white dark:group-hover:text-black transition-colors">Schools Taught</p>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Bekerja bersama Ardi sangat efisien. Beliau memiliki pemahaman mendalam mengenai struktur topologi jaringan yang terorganisir."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">A. Ibnu Auf Alfarizi</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Systems Engineer</span>
-                    </div>
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 text-center group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
+                    <p class="text-4xl font-black mb-2 group-hover:scale-110 group-hover:text-white dark:group-hover:text-black transition-transform dark:text-white">50+</p>
+                    <p class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400 dark:text-gray-500 group-hover:text-white dark:group-hover:text-black transition-colors">Students Impacted</p>
                 </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Infrastruktur jaringan yang dibangun sangat rapi dan memenuhi standar efisiensi industri saat ini."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Aria Putra Bakti</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Network Administrator</span>
-                    </div>
-                </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Sangat kompeten dalam konfigurasi MikroTik, terutama pada implementasi protokol routing OSPF dan BGP."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Arkan Azka</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Infrastructure Lead</span>
-                    </div>
-                </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Penyampaian solusi teknis yang diberikan sangat jelas dan aplikatif. Ahli dalam manajemen jaringan enterprise."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Rehan Firmansyah</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">IT Consultant</span>
-                    </div>
-                </div>
-                <div class="w-[280px] sm:w-[320px] md:w-[350px] bg-neutral-900 border border-white/5 p-8 rounded-3xl">
-                    <p class="text-gray-400 text-sm italic mb-6 leading-relaxed">"Memiliki wawasan yang luas dalam diskusi mengenai keamanan jaringan dan optimasi bandwidth."</p>
-                    <div>
-                        <h4 class="text-white font-black text-lg uppercase tracking-tighter">Zubair</h4>
-                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Security Analyst</span>
-                    </div>
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 text-center group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
+                    <p class="text-4xl font-black mb-2 group-hover:scale-110 group-hover:text-white dark:group-hover:text-black transition-transform dark:text-white">15+</p>
+                    <p class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400 dark:text-gray-500 group-hover:text-white dark:group-hover:text-black transition-colors">Materials Taught</p>
                 </div>
             </div>
         </div>
@@ -318,10 +326,100 @@
             </div>
 
             <div class="md:col-span-7 order-1 md:order-2 project-card" data-aos="fade-left">
-                <div class="aspect-[16/10] max-w-[420px] sm:max-w-[480px] md:max-w-[520px] w-full mx-auto md:ml-auto bg-gray-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-3xl shadow-gray-100 dark:shadow-none border border-gray-100 dark:border-neutral-800">
+                <div class="aspect-[16/10] max-w-[420px] sm:max-w-[480px] md:max-w-[520px] w-full mx-auto md:ml-auto bg-gray-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-3xl shadow-gray-100 dark:shadow-none border border-gray-200/50 dark:border-neutral-700/50">
                     <img 
                         src="Aset/Topology 1.jpg" 
                         alt="Arsitektur Topologi Jaringan Enterprise" 
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    >
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center mt-16 md:mt-24">
+            
+            <div class="md:col-span-7 order-1 md:order-1 project-card" data-aos="fade-right">
+                <div class="aspect-[16/10] max-w-[420px] sm:max-w-[480px] md:max-w-[520px] w-full mx-auto md:mr-auto bg-gray-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-3xl shadow-gray-100 dark:shadow-none border border-gray-200/50 dark:border-neutral-700/50">
+                    <img 
+                        src="Aset/Topology 2.jpeg" 
+                        alt="IPv6 Routing Topology with RIPng" 
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    >
+                </div>
+            </div>
+
+            <div class="md:col-span-5 order-2 md:order-2 text-center md:text-right" data-aos="fade-left" data-aos-delay="200">
+                <div class="flex items-center justify-center md:justify-end gap-3 mb-6">
+                    <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">IPv6 Network Implementation</span>
+                    <span class="w-8 h-px bg-black dark:bg-white"></span>
+                </div>
+                
+                <h4 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 text-black dark:text-white">
+                    IPv6<br>RIPng Lab
+                </h4>
+                
+                <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-10 font-light">
+                    IPv6 routing using RIPng across three routers (R1, R2, R3). This lab helped me strengthen my understanding of IPv6 dynamic routing, interface configuration, and end-to-end connectivity.
+                </p>
+                
+                <div class="flex flex-wrap justify-center md:justify-end gap-2 mb-10 md:mb-12">
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">IPv6</span>
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">RIPng</span>
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">Dynamic Routing</span>
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">Network Config</span>
+                </div>
+
+                <div class="text-center md:text-right mb-6">
+                    <p class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">Key Highlights:</p>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                        <li>• Configured RIPng on multiple interfaces</li>
+                        <li>• Verified route propagation using show ipv6 route rip</li>
+                        <li>• Successfully tested connectivity with IPv6 ping across all routers</li>
+                        <li>• Learned how routing behaves with link-local next-hops</li>
+                    </ul>
+                </div>
+
+                <a href="#" class="inline-block text-[10px] font-black border border-black dark:border-white px-8 py-3.5 rounded-full uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition shadow-sm dark:text-white">
+                    View Case Study
+                </a>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center mt-16 md:mt-24">
+            
+            <div class="md:col-span-5 order-2 md:order-1 text-center md:text-left" data-aos="fade-right" data-aos-delay="200">
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                    <span class="w-8 h-px bg-black dark:bg-white"></span>
+                    <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Advanced Routing Protocol</span>
+                </div>
+                
+                <h4 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] md:leading-[0.9] mb-6 md:mb-8 text-black dark:text-white">
+                    OSPF<br>Multi-Area Lab
+                </h4>
+                
+                <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-10 font-light">
+                    Implementation of OSPF multi-area topology with area 0 as backbone. This project demonstrates hierarchical routing design, route summarization, and inter-area communication in enterprise networks.
+                </p>
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-10 md:mb-12">
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">OSPF</span>
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">Multi-Area</span>
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">Route Summarization</span>
+                    <span class="text-[9px] font-bold bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-4 py-1.5 rounded-full uppercase">Hierarchical Design</span>
+                </div>
+
+                <a href="#" class="inline-block text-[10px] font-black border border-black dark:border-white px-8 py-3.5 rounded-full uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition shadow-sm dark:text-white">
+                    View Case Study
+                </a>
+            </div>
+
+            <div class="md:col-span-7 order-1 md:order-2 project-card" data-aos="fade-left">
+                <div class="aspect-[16/10] max-w-[420px] sm:max-w-[480px] md:max-w-[520px] w-full mx-auto md:ml-auto bg-gray-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-3xl shadow-gray-100 dark:shadow-none border border-gray-200/50 dark:border-neutral-700/50">
+                    <img 
+                        src="Aset/Topology 2.jpeg" 
+                        alt="OSPF Multi-Area Topology Implementation" 
                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     >
                 </div>
@@ -336,37 +434,37 @@
             <h3 class="text-[10px] sm:text-[11px] uppercase tracking-[0.6em] text-gray-400 dark:text-gray-500 mb-12 md:mb-20 font-black text-center">Technical Expertise</h3>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-100 dark:bg-neutral-800 border border-gray-100 dark:border-neutral-800 rounded-3xl overflow-hidden">
-                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
                     <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-500 transition-colors">Infrastructure</span>
                     <h4 class="text-2xl font-black uppercase tracking-tighter mt-4 group-hover:text-white dark:group-hover:text-black transition-colors leading-none dark:text-white">Cisco<br>Enterprise</h4>
                     <p class="text-[10px] mt-6 text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Routing, Switching & IOS</p>
                 </div>
 
-                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
                     <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-500 transition-colors">Core Routing</span>
                     <h4 class="text-2xl font-black uppercase tracking-tighter mt-4 group-hover:text-white dark:group-hover:text-black transition-colors leading-none dark:text-white">MikroTik<br>RouterOS</h4>
                     <p class="text-[10px] mt-6 text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">OSPF, BGP & MTCRE Standards</p>
                 </div>
 
-                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
                     <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-500 transition-colors">Security</span>
                     <h4 class="text-2xl font-black uppercase tracking-tighter mt-4 group-hover:text-white dark:group-hover:text-black transition-colors leading-none dark:text-white">Network<br>Defense</h4>
                     <p class="text-[10px] mt-6 text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Fortinet & Firewall Management</p>
                 </div>
 
-                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
                     <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-500 transition-colors">Cloud</span>
                     <h4 class="text-2xl font-black uppercase tracking-tighter mt-4 group-hover:text-white dark:group-hover:text-black transition-colors leading-none dark:text-white">AWS<br>Cloud</h4>
                     <p class="text-[10px] mt-6 text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">VPC & Cloud Infrastructure</p>
                 </div>
 
-                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
                     <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-500 transition-colors">Operating System</span>
                     <h4 class="text-2xl font-black uppercase tracking-tighter mt-4 group-hover:text-white dark:group-hover:text-black transition-colors leading-none dark:text-white">Linux<br>Environment</h4>
                     <p class="text-[10px] mt-6 text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Server Admin & Pop!_OS</p>
                 </div>
 
-                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500">
+                <div class="bg-white dark:bg-neutral-900 p-8 sm:p-10 md:p-12 group hover:bg-black dark:hover:bg-white transition-colors duration-500 border border-gray-200/50 dark:border-neutral-700/50 shadow-md hover:shadow-lg">
                     <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-500 transition-colors">Development</span>
                     <h4 class="text-2xl font-black uppercase tracking-tighter mt-4 group-hover:text-white dark:group-hover:text-black transition-colors leading-none dark:text-white">Frontend<br>Basics</h4>
                     <p class="text-[10px] mt-6 text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">HTML, CSS & JavaScript</p>
@@ -381,7 +479,7 @@
             <h3 class="text-[10px] sm:text-[12px] uppercase tracking-[0.4em] text-gray-400 dark:text-gray-500 mb-10 sm:mb-16 font-extrabold text-center">Verified Credentials</h3>
             
             <div class="grid gap-8">
-                <div class="p-6 sm:p-8 border border-gray-100 dark:border-neutral-900 rounded-3xl group hover:border-black dark:hover:border-white transition-all duration-500" data-aos="fade-up">
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex-1">
                             <div class="flex items-center gap-4 mb-2">
@@ -389,16 +487,21 @@
                                 <h4 class="font-black text-xl sm:text-2xl uppercase tracking-tighter dark:text-white">CCNA 200-301</h4>
                             </div>
                             <p class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest">Cisco Certified Network Associate</p>
-                            <div class="mt-4 bg-gray-50 dark:bg-neutral-900 inline-block px-4 py-2 rounded-xl border border-gray-100 dark:border-neutral-800">
+                            <div class="mt-4 bg-gray-50 dark:bg-neutral-900 px-4 py-2 rounded-xl border border-gray-100 dark:border-neutral-800 inline-flex items-center">
                                 <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">Verification No:</span>
-                                <span class="text-[9px] font-black text-black dark:text-white ml-1 uppercase">0a631a746bd34faebc0cacfc57938324</span>
+                                <span id="ccna-code" class="text-[9px] font-black text-black dark:text-white ml-1 mr-2 uppercase">0a631a746bd34faebc0cacfc57938324</span>
+                                <button id="copy-ccna" class="bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-700 px-2 py-1 rounded transition-colors" title="Copy to clipboard">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <a href="https://www.cisco.com/go/verifycertificate" target="_blank" class="w-full md:w-auto text-center text-[10px] font-black bg-black dark:bg-white text-white dark:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full uppercase hover:invert transition shadow-xl">Verify &rarr;</a>
                     </div>
                 </div>
 
-                <div class="p-6 sm:p-8 border border-gray-100 dark:border-neutral-900 rounded-3xl group hover:border-black dark:hover:border-white transition-all duration-500" data-aos="fade-up">
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex-1">
                             <div class="flex items-center gap-4 mb-2">
@@ -406,16 +509,21 @@
                                 <h4 class="font-black text-xl sm:text-2xl uppercase tracking-tighter dark:text-white">MTCRE</h4>
                             </div>
                             <p class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest">MikroTik Certified Routing Engineer</p>
-                            <div class="mt-4 bg-gray-50 dark:bg-neutral-900 inline-block px-4 py-2 rounded-xl border border-gray-100 dark:border-neutral-800">
+                            <div class="mt-4 bg-gray-50 dark:bg-neutral-900 px-4 py-2 rounded-xl border border-gray-100 dark:border-neutral-800 inline-flex items-center">
                                 <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">Verification No:</span>
-                                <span class="text-[9px] font-black text-black dark:text-white ml-1 uppercase">2412RE5907</span>
+                                <span id="mtcre-code" class="text-[9px] font-black text-black dark:text-white ml-1 mr-2 uppercase">2412RE5907</span>
+                                <button id="copy-mtcre" class="bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-700 px-2 py-1 rounded transition-colors" title="Copy to clipboard">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <a href="https://mikrotik.com/certificates" target="_blank" class="w-full md:w-auto text-center text-[10px] font-black bg-black dark:bg-white text-white dark:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full uppercase hover:invert transition shadow-xl">Verify &rarr;</a>
                     </div>
                 </div>
 
-                <div class="p-6 sm:p-8 border border-gray-100 dark:border-neutral-900 rounded-3xl group hover:border-black dark:hover:border-white transition-all duration-500" data-aos="fade-up">
+                <div class="p-6 sm:p-8 border border-gray-200/50 dark:border-neutral-700/50 rounded-3xl shadow-md group hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-500" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                         <div class="flex-1">
                             <div class="flex items-center gap-4 mb-2">
@@ -423,9 +531,14 @@
                                 <h4 class="font-black text-xl sm:text-2xl uppercase tracking-tighter dark:text-white">MTCNA</h4>
                             </div>
                             <p class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest">MikroTik Certified Network Associate</p>
-                            <div class="mt-4 bg-gray-50 dark:bg-neutral-900 inline-block px-4 py-2 rounded-xl border border-gray-100 dark:border-neutral-800">
+                            <div class="mt-4 bg-gray-50 dark:bg-neutral-900 px-4 py-2 rounded-xl border border-gray-100 dark:border-neutral-800 inline-flex items-center">
                                 <span class="text-[9px] font-bold uppercase text-gray-400 dark:text-gray-500">Verification No:</span>
-                                <span class="text-[9px] font-black text-black dark:text-white ml-1 uppercase">2411NA9391</span>
+                                <span id="mtcna-code" class="text-[9px] font-black text-black dark:text-white ml-1 mr-2 uppercase">2411NA9391</span>
+                                <button id="copy-mtcna" class="bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-700 px-2 py-1 rounded transition-colors" title="Copy to clipboard">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <a href="https://mikrotik.com/certificates" target="_blank" class="w-full md:w-auto text-center text-[10px] font-black bg-black dark:bg-white text-white dark:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full uppercase hover:invert transition shadow-xl">Verify &rarr;</a>
@@ -440,7 +553,7 @@
             <div class="text-xl sm:text-2xl font-black mb-8 tracking-tighter italic uppercase">Ardi Sandiaga Zuhdi<span class="text-gray-400">.</span></div>
             <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-10 text-[10px] uppercase font-bold tracking-widest text-gray-400">
                 <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
                 <a href="#skills" class="hover:text-white transition">Skills</a>
                 <a href="#certificates" class="hover:text-white transition">Certs</a>
                 <a href="https://wa.me/6282113450610" class="hover:text-white transition">WhatsApp</a>
@@ -449,72 +562,95 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ 
-            duration: 1000, 
-            once: true,
-            offset: 100
-        });
-    </script>
-    <script>
-        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({ 
+                duration: 1000, 
+                once: true,
+                offset: 100
+            });
+        </script>
+        <script>
+            var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Change the icons inside the button based on previous settings
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-        }
-
-        var themeToggleBtn = document.getElementById('theme-toggle');
-
-        themeToggleBtn.addEventListener('click', function() {
-            // toggle icons inside button
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-
-            // if set via local storage previously
-            if (localStorage.getItem('theme')) {
-                if (localStorage.getItem('theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                }
-
-            // if NOT set via local storage previously
+            // Change the icons inside the button based on previous settings
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                themeToggleLightIcon.classList.remove('hidden');
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                }
+                themeToggleDarkIcon.classList.remove('hidden');
             }
-        });
-    </script>
-    <script>
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', () => {
-                const isOpen = !mobileMenu.classList.contains('hidden');
-                mobileMenu.classList.toggle('hidden');
-                menuButton.setAttribute('aria-expanded', String(!isOpen));
+            var themeToggleBtn = document.getElementById('theme-toggle');
+
+            themeToggleBtn.addEventListener('click', function() {
+                // toggle icons inside button
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
+
+                // if set via local storage previously
+                if (localStorage.getItem('theme')) {
+                    if (localStorage.getItem('theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    }
+
+                // if NOT set via local storage previously
+                } else {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                }
             });
+        </script>
+        <script>
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-            mobileMenu.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuButton.setAttribute('aria-expanded', 'false');
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    menuButton.setAttribute('aria-expanded', String(!isOpen));
                 });
-            });
-        }
-    </script>
-</body>
-</html>
+
+                mobileMenu.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        </script>
+        <script>
+            // Copy to clipboard functionality
+            function copyToClipboard(buttonId, textId) {
+                const button = document.getElementById(buttonId);
+                const textElement = document.getElementById(textId);
+                const text = textElement.textContent;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalHTML = button.innerHTML;
+                    button.innerHTML = '<span class="text-green-600">Copied!</span>';
+                    setTimeout(() => {
+                        button.innerHTML = originalHTML;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            }
+
+            // Add event listeners
+            document.getElementById('copy-ccna').addEventListener('click', () => copyToClipboard('copy-ccna', 'ccna-code'));
+            document.getElementById('copy-mtcre').addEventListener('click', () => copyToClipboard('copy-mtcre', 'mtcre-code'));
+            document.getElementById('copy-mtcna').addEventListener('click', () => copyToClipboard('copy-mtcna', 'mtcna-code'));
+        </script>
+    </body>
+    </html>
